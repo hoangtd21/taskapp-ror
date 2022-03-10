@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup Docker for Rails/PostgreSQL app
 
-Things you may want to cover:
+Flow instructions: https://docs.docker.com/samples/rails/
 
-* Ruby version
+## Create crud app with scaffold
 
-* System dependencies
+```powershell
+  docker-compose run --rm web rails g scaffold Task title:string description:text status:decimal
+  docker-compose run --rm web rake db:migrate
+```
 
-* Configuration
+## Run app
 
-* Database creation
+```powershell
+  docker-compose up
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Link running app: http://localhost:3000/tasks
